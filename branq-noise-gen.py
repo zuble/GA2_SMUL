@@ -1,7 +1,6 @@
 from scipy.signal import butter, lfilter
 import soundfile as sf
 import numpy as np
-
 #%run branq-noise-gen.py
 
 def butter_bandpass(lowcut, highcut, fs, order=5):

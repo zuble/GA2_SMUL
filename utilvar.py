@@ -17,6 +17,9 @@ class utilvar:
     wlen = 2048
     wstep = 512 #int(wlen-woverlap)
     
+    ffft = None
+    ffftfreq = None
+    
     class ft:
         rms = None
         zcr = None
@@ -29,3 +32,4 @@ class utilvar:
         t = None
         f = None
         X = None
+    
