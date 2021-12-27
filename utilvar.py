@@ -1,33 +1,50 @@
 class utilvar:
     max_vol = -0.3
     
+    f = None     #filename w/out extension
+    files = None #Arraysof all filenames
+    
     audio_in_path = './audio/input/'
     img_out_path = './img/'
-    f = None #filename w/out extension
     
     audata = None         #AudioDataArray
     audata_overwin = None #AudioDataMatrix Overlapped and Windowed
-    dur = None #AudioDuration
-    t = None   #TimeArray acoording sample occurencies
-    Fs = 44100  #FreqSampling
-    N = None   #Nsamples
-    nwin = None #Nwindows in overlap
+    dur = None            #AudioDuration
+    t = None              #TimeArray acoording sample occurencies
+    Fs = 44100            #FreqSampling
+    N = None              #Nsamples
+    nwin = None           #Nwindows in overlap
     
     w = None
-    wlen = 2048
-    wstep = 512 #int(wlen-woverlap)
+    wlen = 1024 
+    wstep = 64 #int(wlen-woverlap)
     
-    ffft = None
-    ffftfreq = None
     
-    class ft:
-        rms = None
-        zcr = None
-        cntr = None #all vectors
-        sprd = None
-        flux = None
-        flat = None
-        
+    rms = None
+    zcr = None
+    lat = None 
+    tcntr = None
+    ntcntr = None
+    ted = None
+    nted = None
+    
+    cntr = None #DirectOutputVectors
+    sprd = None
+    flux = None
+    flat = None
+    
+    
+    ft_table = None  #TableW/ft
+    ft_vector = None #Vector with all ft_info of atual AudioData
+    ft_info = ["T-rms.mean","T-rms.std",
+               "T-zcr.mean","T-zcr.std",
+               "T-LAT","T-centroid","T-effective-dur",
+               "S-centroid.mean","S-cntr.std",
+               "S-spread","S-sprd.std",
+               "S-flux","S-flux.std",
+               "S-flatness","S-flat.std"]
+    
+    #Spectrogram    
     class spec:
         t = None
         f = None

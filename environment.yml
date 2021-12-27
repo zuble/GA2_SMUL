@@ -31,6 +31,8 @@ dependencies:
     - librosa==0.8.*
     - pysoundfile==0.9.*
     - pyaca
-  
+    - essentia
+    - jupyter-kite
+    - beautifultable
 
     
