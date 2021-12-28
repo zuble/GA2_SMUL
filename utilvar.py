@@ -22,10 +22,13 @@ class utilvar:
     
     rms = None
     zcr = None
-    lat = None 
+    lat = None    #RealS*
+    latStart = None
+    latStop = None
     tcntr = None
-    ntcntr = None
     ted = None
+    nlat = None   #Normalized
+    ntcntr = None
     nted = None
     
     cntr = None #DirectOutputVectors
@@ -36,6 +39,7 @@ class utilvar:
     
     ft_table = None  #TableW/ft
     ft_vector = None #Vector with all ft_info of atual AudioData
+    ft_matrix = [] #Matrix with all ft_info of all audio within audio_in_path
     ft_info = ["T-rms.mean","T-rms.std",
                "T-zcr.mean","T-zcr.std",
                "T-LAT","T-centroid","T-effective-dur",
