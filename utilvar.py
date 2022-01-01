@@ -9,6 +9,7 @@ class utilvar:
     
     audata = None         #AudioDataArray
     audata_overwin = None #AudioDataMatrix Overlapped and Windowed
+    audata_stft = None
     dur = None            #AudioDuration
     t = None              #TimeArray acoording sample occurencies
     Fs = 44100            #FreqSampling
@@ -16,8 +17,8 @@ class utilvar:
     nwin = None           #Nwindows in overlap
     
     w = None
-    wlen = 1024 
-    wstep = 64 #int(wlen-woverlap)
+    wlen = 2048 
+    wstep = 512 #int(wlen-woverlap)
     
     
     rms = None
@@ -54,3 +55,8 @@ class utilvar:
         f = None
         X = None
     
+    #FeatureVersusPlots
+    class vs:
+        instr = ["acc","cbs","clr","flt","gui","hrp","sax","trb","trp","tub","vcl","vln"]
+        cor   = [ "y" , "m" , "c" , "r" , "g" , "w" , "y" , "m" , "c" , "r" , "g" , "w" ]
+        mrk   = [ "v" , "1" , "s" , "P" , "*" , "D" , "^" , "o" , "X" , "d" , "x" , "+" ]

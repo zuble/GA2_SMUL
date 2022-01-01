@@ -117,6 +117,42 @@ def lat_generate():
     utilv.lat , utilv.latStart, utilv.latStop = logAttackTime(utilv.Env)
     utilv.nlat = (10**(utilv.lat)) / utilv.dur
     
+def log_attack_time():
+    """
+    computes the log-attack time from the waveform (time from 20% to 90%)
+      Args:
+        x: waveform 
+        f_s: sample rate of audio data
+
+      Returns:
+        lat (in secs)
+    """
+    def find_nearest_arg(array, value):
+        array = np.asarray(np.squeeze(array))
+        idx = (np.abs(array - value)).argmin()
+        return idx
+    x = utilv.audata
+    
+    rms = librosa.feature.rms(y=utilv.audata, frame_length=utilv.wlen, hop_length=utilv.wstep)
+    e20_pos = find_nearest_arg(rms, 0.2*np.max(rms))
+    e90_pos = find_nearest_arg(rms, 0.9*np.max(rms))
+    e20_time = e20_pos * utilv.wstep/utilv.Fs
+    e90_time = e90_pos * utilv.wstep/utilv.Fs
+    
+    if e20_time > e90_time:
+        e20_time = 0    
+        
+    eps = np.finfo(float).eps
+    
+    #lat = math.log10(e90_time - e20_time + eps)
+    #nlat = 10**lat / utilv.dur
+    
+    lat = np.log(e90_time - e20_time + eps) #(log is base e)
+    nlat = np.exp(lat)/utilv.dur #librosa.get_duration(y=utilv.audata, sr=utilv.Fs)
+    
+    print("lat",lat,"nlat",nlat,"start",e20_time,"stop",e90_time)
+    
+
     
 #https://essentia.upf.edu/reference/streaming_Centroid.html  
 def tcntr_generate():  
