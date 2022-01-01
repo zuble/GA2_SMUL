@@ -56,6 +56,8 @@ class utilvar:
         X = None
     
     #FeatureVersusPlots
+    #color : https://matplotlib.org/stable/gallery/color/named_colors.html
+    #markers : https://matplotlib.org/stable/api/markers_api.html
     class vs:
         instr = ["acc","cbs","clr","flt","gui","hrp","sax","trb","trp","tub","vcl","vln"]
         cor   = [ "y" , "m" , "c" , "r" , "g" , "w" , "y" , "m" , "c" , "r" , "g" , "w" ]
