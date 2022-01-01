@@ -33,3 +33,10 @@ Then change in utilvar.py under *class:vs* accordingly, with the name partition 
         instr = ["flt","saxof"]
         cor   = [ "y" , "m" ]
         mrk   = [ "v" , "1" ]
+
+### PLots Examples
+Envelope + LAT + EffectiveDuration  
+![alt text](https://github.com/zuble/GA2_SMUL/blob/main/img/acc_qu_G2_12_env%2Blat%2Btcntroid.png)
+
+Feature Versus  
+![alt text](https://github.com/zuble/GA2_SMUL/blob/main/img/FEATURE_VERSUS.png)
