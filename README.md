@@ -24,7 +24,8 @@ Avaiable features:
 
 ###  Audio Data Management
 Put the data you want to process inside /audio/input  
-Then change in utilvar.py under *class:vs* accordingly, with the name partition being underscore  
+Then change in utilvar.py under *class:vs* accordingly, with the name partition being underscore    
+e.g.
 
     /GA2_SMUL/audio/input$ ls 
     flt_G1.wav  saxof_G3.wav
